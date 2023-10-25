@@ -5,6 +5,7 @@
             <meta name="viewport" content="width=device-width, initial-scale=1">
             <!-- Styles -->
             <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+            <link href="{{ asset('css/bootswatchSolarTheme.css') }}" rel="stylesheet">
         </head>
         <body>
         <form action="{{ route('movies.search') }}" method="GET">
@@ -22,8 +23,8 @@
                         <div class="card">
                             <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/{{ $movie['poster_path'] }}" alt="Affiche de {{ $movie['title'] }}" class="card-img-top">
                             <div class="card-body">
-                                <h5 class="card-title">{{ $movie['title'] }}</h5>
-                                <p class="card-text">{{ $movie['overview'] }}</p>
+                            <h5 class="card-title text-primary">{{ $movie['title'] }}</h5>
+                            <p class="card-text text-light">{{ $movie['overview'] }}</p>
                             </div>
                         </div>
                     </a>
@@ -40,7 +41,7 @@
         @endif
     </div>
     <div class="d-flex justify-content-center my-4">
-    <a href="{{ route('movies.index') }}" class="btn btn-primary">Anglais</a>
+    <a href="{{ route('movies.index') }}" class="btn btn-light">Anglais</a>
 </div>
 
             </div>

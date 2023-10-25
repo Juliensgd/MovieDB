@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- Styles -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/bootswatchSolarTheme.css') }}" rel="stylesheet">
     </head>
     <body>
         <form action="{{ route('movies.search') }}" method="GET">
@@ -22,8 +23,8 @@
                     <div class="card">
                         <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/{{ $movie['poster_path'] }}" alt="Affiche de {{ $movie['title'] }}" class="card-img-top">
                         <div class="card-body">
-                            <h5 class="card-title">{{ $movie['title'] }}</h5>
-                            <p class="card-text">{{ $movie['overview'] }}</p>
+                            <h5 class="card-title text-primary">{{ $movie['title'] }}</h5>
+                            <p class="card-text text-light">{{ $movie['overview'] }}</p>
                         </div>
                     </div>
                 </a>
@@ -32,15 +33,15 @@
         </div>
         <div class="pagination d-flex justify-content-center mt-4 mb-4">
     @if ($currentPage > 1)
-        <a href="{{ route('movies.index', ['page' => $currentPage - 1]) }}" class="btn btn-primary mr-2">Précédent</a>
+        <a href="{{ route('movies.index', ['page' => $currentPage - 1]) }}" class="btn btn-primary mr-2">Back</a>
     @endif
 
     @if ($currentPage < $totalPages)
-        <a href="{{ route('movies.index', ['page' => $currentPage + 1]) }}" class="btn btn-primary mx-2">Suivant</a>
+        <a href="{{ route('movies.index', ['page' => $currentPage + 1]) }}" class="btn btn-primary mx-2">Next</a>
     @endif
 </div>
 <div class="d-flex justify-content-center my-4">
-    <a href="{{ route('movies.fr') }}" class="btn btn-primary">Francais</a>
+    <a href="{{ route('movies.fr') }}" class="btn btn-light">Francais</a>
 </div>
 
         </div>
